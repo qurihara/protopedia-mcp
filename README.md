@@ -27,8 +27,8 @@ ProtoPedia の [アプリケーション設定ページ](https://protopedia.net/
 ### 2. ビルド
 
 ```bash
-git clone https://github.com/qurihara/protopedia_mcp.git
-cd protopedia_mcp
+git clone https://github.com/qurihara/protopedia-mcp.git
+cd protopedia-mcp
 npm install
 npm run build
 ```
@@ -42,7 +42,7 @@ npm run build
 ```bash
 claude mcp add protopedia \
   --env PROTOPEDIA_API_TOKEN=YOUR_TOKEN_HERE \
-  -- node /absolute/path/to/protopedia_mcp/dist/index.js
+  -- node /absolute/path/to/protopedia-mcp/dist/index.js
 ```
 
 #### 手動で `.mcp.json` / `claude_desktop_config.json` に書く場合
@@ -52,7 +52,7 @@ claude mcp add protopedia \
   "mcpServers": {
     "protopedia": {
       "command": "node",
-      "args": ["/absolute/path/to/protopedia_mcp/dist/index.js"],
+      "args": ["/absolute/path/to/protopedia-mcp/dist/index.js"],
       "env": {
         "PROTOPEDIA_API_TOKEN": "YOUR_TOKEN_HERE"
       }
