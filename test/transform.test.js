@@ -48,9 +48,16 @@ function rawPrototype(overrides = {}) {
   };
 }
 
-test("status numbers round-trip", () => {
-  for (const s of ["idea", "developing", "completed", "memorial"]) {
-    assert.equal(statusFromNumber(statusToNumber(s)), s);
+test("status numbers map to the ProtoPedia API values", () => {
+  const expected = [
+    [1, "idea"],
+    [2, "developing"],
+    [3, "completed"],
+    [4, "memorial"],
+  ];
+  for (const [n, s] of expected) {
+    assert.equal(statusFromNumber(n), s);
+    assert.equal(statusToNumber(s), n);
   }
   assert.equal(statusFromNumber(0), "unknown");
   assert.equal(statusFromNumber(99), "unknown");
